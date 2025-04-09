@@ -90,7 +90,7 @@ img {
 }
 
 .about-section a {
-  color: #00aff4;
+  color: #e100ff;
   text-decoration: none
 }
 
@@ -204,7 +204,7 @@ body {
   height: 120px;
   border-radius: 50%;
   padding: 8px;
-  background-color: #e8eff6
+  background-color: #000000
 }
 
 .avatar-decoration {
@@ -602,19 +602,19 @@ a:hover.tooltip::after {
 }
 
 .softpink {
-  color: #f8bbd0
+  color: #000000
 }
 
 .rosepink {
-  color: #ecdcd4
+  color: #000000
 }
 
 .green {
-  color: #1ed760
+  color: #000000
 }
 
 .blue {
-  color: #00aff4
+  color: #000000
 }
 
 .chat-container {

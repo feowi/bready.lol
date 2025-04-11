@@ -41,7 +41,7 @@
   --primary-s-bottom: 0%;
   --primary-l-bottom: 0%;
   --text-color: #ffffff;
-  --box-shadow-color: rgba(0, 0, 0, 0.1)
+  --box-shadow-color: rgb(255 0 0 / 10%);
 }
 
 .badges,
@@ -59,10 +59,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent
+  background-color: #00000000;
 }
 
 ::-webkit-scrollbar-thumb {
+  FONT-WEIGHT: 500;
   background-color: hsl(var(--primary-h-top), 45%, 50%, .1);
   border-radius: 10px
 }
@@ -90,7 +91,7 @@ img {
 }
 
 .about-section a {
-  color: #e100ff;
+  color: #ff0094;
   text-decoration: none
 }
 
@@ -133,7 +134,7 @@ body {
 }
 
 .profile-border {
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, .1);
+  box-shadow: 5px 5px 15px rgb(255 0 0 / 10%);
   padding: 5px;
   flex-direction: column;
   max-height: calc(100% - 100px)

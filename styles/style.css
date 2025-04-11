@@ -22,7 +22,7 @@
 
 .display-name,
 .username {
-  color: var(--text-color)
+  color: #ffffff;
 }
 
 * {
@@ -34,13 +34,13 @@
 }
 
 :root {
-  --primary-h-top: 206deg;
-  --primary-s-top: 41%;
-  --primary-l-top: 88%;
-  --primary-h-bottom: 212deg;
-  --primary-s-bottom: 58%;
-  --primary-l-bottom: 44%;
-  --text-color: black;
+  --primary-h-top: 0deg;
+  --primary-s-top: 0%;
+  --primary-l-top: 0%;
+  --primary-h-bottom: 0deg;
+  --primary-s-bottom: 0%;
+  --primary-l-bottom: 0%;
+  --text-color: #ffffff;
   --box-shadow-color: rgba(0, 0, 0, 0.1)
 }
 
@@ -103,7 +103,7 @@ body {
 }
 
 .box-color {
-  background: linear-gradient(to bottom, hsl(var(--primary-h-top), var(--primary-s-top), var(--primary-l-top)), hsl(var(--primary-h-bottom), var(--primary-s-bottom), var(--primary-l-bottom)))
+  background: linear-gradient(to bottom, hsl(0deg 0% 0%), hsl(0deg 0% 0%));
 }
 
 .container {

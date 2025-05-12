@@ -1,0 +1,88 @@
+/* Body Styles */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  overflow: hidden;
+  cursor: none; /* Hide default cursor */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+/* Load the custom font */
+@font-face {
+  font-family: 'KatFont'; /* Custom name for the font */
+  src: url('kat.woff2') format('woff2'); /* Ensure the font file path is correct */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Font Styles with Fade-in Animation */
+h1 {
+  font-family: 'KatFont', sans-serif; /* Apply the custom font */
+  font-size: 10vw; /* Use viewport width to scale the font */
+  color: white;
+  text-align: center;
+  z-index: 10001; /* Ensure text is above the cursor */
+  position: relative;
+  visibility: visible; /* Ensure text is visible */
+  margin: 0; /* Remove margin */
+  opacity: 0; /* Initially set opacity to 0 */
+  transform: translateY(100px); /* Start from the bottom */
+  animation: fadeInUp 1s ease-out forwards; /* Add animation */
+}
+
+/* Animation to fade in and move up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); /* Start from the bottom */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at the normal position */
+  }
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px; /* Increase cursor size */
+  height: 20px; /* Increase cursor size */
+  background-color: white;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+  z-index: 9999;
+  display: block; /* Make sure cursor is displayed */
+}
+
+/* Copyright Text Styles */
+.copyright {
+  font-family: 'KatFont', sans-serif;
+  font-size: 3vw;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  margin-top: 20px; /* Space from the main text */
+  visibility: hidden;
+  animation: fadeInCopyright 1s ease-out forwards;
+  animation-delay: 2s; /* Delay the start of the animation */
+}
+
+/* Animation for Copyright Text */
+@keyframes fadeInCopyright {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

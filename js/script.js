@@ -57,3 +57,19 @@ if(contactForm){
   });
 }
 
+const interactiveElements = document.querySelectorAll('button, a, input, textarea');
+
+interactiveElements.forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.width = '60px';
+    cursor.style.height = '60px';
+    cursor.style.background = 'rgba(255,255,255,0.2)';
+    cursor.style.backdropFilter = 'blur(10px) saturate(200%)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.width = '30px';
+    cursor.style.height = '30px';
+    cursor.style.background = 'rgba(255,255,255,0.1)';
+    cursor.style.backdropFilter = 'blur(6px) saturate(180%)';
+  });
+});

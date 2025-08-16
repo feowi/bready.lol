@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BREADY Showcase</title>
+  <title>BREADY Projects</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -12,7 +12,7 @@
   <div class="cursor" id="cursor"></div>
 
   <header class="p-6 flex justify-between items-center sticky top-0 bg-white dark:bg-gray-900 z-50 shadow">
-    <h1 class="text-2xl font-bold">BREADY Showcase</h1>
+    <h1 class="text-2xl font-bold">BREADY Projects</h1>
     <nav class="space-x-4">
       <a href="index.html" class="hover:underline">Home</a>
       <a href="projects.html" class="hover:underline">Projects</a>
@@ -21,9 +21,10 @@
     <button id="themeToggle" class="px-4 py-2 bg-sky-500 text-white rounded-lg">Toggle Theme</button>
   </header>
 
-  <section class="h-screen flex flex-col items-center justify-center" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-4">Welcome to My Projects</h2>
-    <p class="max-w-xl text-center">Explore the websites and creations I’ve built with smooth animations and interactivity.</p>
+  <section class="p-10 grid md:grid-cols-3 gap-6" data-aos="fade-up">
+    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl shadow hover:scale-105 transition-transform">Project 1</div>
+    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl shadow hover:scale-105 transition-transform">Project 2</div>
+    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl shadow hover:scale-105 transition-transform">Project 3</div>
   </section>
 
   <script src="js/script.js"></script>

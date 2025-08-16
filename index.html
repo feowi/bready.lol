@@ -2,31 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  	<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="meow" />
-		<meta property="og:description" content="bready.lol" />
-		<meta property="og:title" content="bready" />
-		<meta property="og:image" content="http://bready.lol/public/icons/embed.png" />
-		<meta property="og:type" content="website" />
-		<link rel="canonical" href="https://bready.lol" />
-		<meta property="og:site_name" content="@wavedotnet" />
-		<meta
-			name="keywords"
-			content="bready, bready.lol, wavedotnet" />
-		<meta
-			property="og:image"
-			content="http://bready.lol/public/icons/embed.png" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="language" content="English" />
-		<meta name="author" content="bready" />
-  <title>Rework in progess..</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Custom cursor */
+    body {
+      cursor: none;
+    }
+    .cursor {
+      width: 20px;
+      height: 20px;
+      border: 2px solid white;
+      border-radius: 50%;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: transform 0.1s ease;
+      z-index: 50;
+    }
+  </style>
 </head>
-<body>
-  <div class="custom-cursor" id="customCursor"></div>
-  <h1 class="fade-in">Massive Rework Soon...</h1>
-  <div class="copyright" id="copyrightText">2025 © bready.lol & BREADY LABEL™. All rights reserved. </div>
+<body class="bg-gradient-to-b from-gray-900 to-black text-white font-sans">
 
-  <script src="script.js"></script>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed w-full bg-black/50 backdrop-blur-md z-40">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-wider">My Portfolio</h1>
+      <ul class="flex gap-6">
+        <li><a href="#projects" class="hover:text-purple-400 transition">Projects</a></li>
+        <li><a href="#about" class="hover:text-purple-400 transition">About</a></li>
+        <li><a href="#contact" class="hover:text-purple-400 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col justify-center items-center text-center">
+    <h2 class="text-5xl font-bold mb-4 animate-pulse">Hi, I'm Levi 👋</h2>
+    <p class="text-xl text-gray-300 max-w-2xl">I build modern, smooth, and aesthetic websites. Scroll down to see my work.</p>
+    <a href="#projects" class="mt-10 px-6 py-3 bg-purple-600 rounded-xl shadow-lg hover:scale-105 transition">View Projects</a>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
+    <h3 class="text-4xl font-bold text-center mb-12">Projects</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card -->
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="https://via.placeholder.com/400x200" alt="Project" class="w-full" />
+        <div class="p-6">
+          <h4 class="text-2xl font-bold mb-2">Project 1</h4>
+          <p class="text-gray-300 mb-4">A modern and responsive website built with Tailwind CSS.</p>
+          <a href="#" class="text-purple-400 hover:underline">View More</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="https://via.placeholder.com/400x200" alt="Project" class="w-full" />
+        <div class="p-6">
+          <h4 class="text-2xl font-bold mb-2">Project 2</h4>
+          <p class="text-gray-300 mb-4">Interactive and smooth scrolling effects implemented in JS.</p>
+          <a href="#" class="text-purple-400 hover:underline">View More</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="https://via.placeholder.com/400x200" alt="Project" class="w-full" />
+        <div class="p-6">
+          <h4 class="text-2xl font-bold mb-2">Project 3</h4>
+          <p class="text-gray-300 mb-4">A showcase of design-focused UI/UX concepts.</p>
+          <a href="#" class="text-purple-400 hover:underline">View More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-900 px-6 text-center">
+    <h3 class="text-4xl font-bold mb-6">About Me</h3>
+    <p class="max-w-2xl mx-auto text-gray-300">I'm a passionate web developer who loves creating smooth, modern websites with stunning designs and interactive experiences.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <h3 class="text-4xl font-bold mb-6">Contact</h3>
+    <p class="text-gray-300 mb-6">Let's connect! Feel free to reach out for collaborations or freelance work.</p>
+    <a href="mailto:example@email.com" class="px-6 py-3 bg-purple-600 rounded-xl shadow-lg hover:scale-105 transition">Email Me</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-black/70 text-center text-gray-400">
+    <p>© 2025 Levi - All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Custom cursor movement
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+    });
+  </script>
 </body>
 </html>

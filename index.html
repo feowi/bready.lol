@@ -18,8 +18,20 @@
     <a href="projects.html" class="hover:underline">Projects</a>
     <a href="bready-label.html" class="hover:underline">BREADY LABEL</a>
   </nav>
-  <button id="themeToggle" class="px-4 py-2 bg-sky-500 text-white rounded-lg hover:scale-105 transition">Toggle Theme</button>
 </header>
+
+<div class="relative w-14 h-8">
+  <input type="checkbox" id="themeToggle" class="sr-only">
+  <label for="themeToggle" class="cursor-pointer block bg-gray-300 dark:bg-gray-700 rounded-full w-14 h-8 relative transition-colors">
+    <span class="absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition-transform flex items-center justify-center text-yellow-500 text-lg">
+      ☀️
+    </span>
+    <span class="absolute right-1 top-1 w-6 h-6 bg-white rounded-full transition-transform flex items-center justify-center text-gray-900 text-lg hidden">
+      🌙
+    </span>
+  </label>
+</div>
+
 
 <section class="h-screen flex flex-col items-center justify-center">
 <h2 class="text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-purple-400 mb-4 animate-text">Welcome to BREADY</h2>

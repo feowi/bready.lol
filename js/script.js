@@ -1,11 +1,42 @@
-// Custom cursor
+// --- Cursor ---
 const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', e => { cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`; });
+const interactiveElements = document.querySelectorAll('button, a, input, textarea');
 
-// Theme toggle
-document.getElementById('themeToggle')?.addEventListener('click', ()=>{document.body.classList.toggle('dark');});
+// Smooth cursor movement
+let mouseX = 0, mouseY = 0;
+let posX = 0, posY = 0;
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
 
-// Music visualizer
+// Animate cursor with slight delay for smooth float
+function animateCursor() {
+  posX += (mouseX - posX) * 0.15;
+  posY += (mouseY - posY) * 0.15;
+  cursor.style.transform = `translate(${posX}px, ${posY}px)`;
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Hover effects for liquid glass
+interactiveElements.forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+});
+
+// --- Dark/Light mode toggle ---
+const themeCheckbox = document.getElementById('themeToggle');
+const sunIcon = themeCheckbox.nextElementSibling.querySelector('span:first-child');
+const moonIcon = themeCheckbox.nextElementSibling.querySelector('span:last-child');
+
+themeCheckbox.addEventListener('change', () => {
+  document.body.classList.toggle('dark');
+  sunIcon.classList.toggle('hidden');
+  moonIcon.classList.toggle('hidden');
+});
+
+// --- Music visualizer ---
 const canvas = document.getElementById('music-visualizer');
 if(canvas){
   const ctx = canvas.getContext('2d');
@@ -23,7 +54,17 @@ if(canvas){
   drawVisualizer();
 }
 
-// Dynamic Updates (JSON)
+// --- Contact form demo ---
+const contactForm = document.querySelector('form');
+if(contactForm){
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Thanks! Your message has been sent.');
+    contactForm.reset();
+  });
+}
+
+// --- Dynamic updates / albums ---
 fetch('updates.json')
   .then(res => res.json())
   .then(data => {
@@ -46,30 +87,3 @@ fetch('updates.json')
       });
     }
   });
-
-  // Contact form submission (demo)
-const contactForm = document.querySelector('form');
-if(contactForm){
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Thanks! Your message has been sent.');
-    contactForm.reset();
-  });
-}
-
-const interactiveElements = document.querySelectorAll('button, a, input, textarea');
-
-interactiveElements.forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.width = '60px';
-    cursor.style.height = '60px';
-    cursor.style.background = 'rgba(255,255,255,0.2)';
-    cursor.style.backdropFilter = 'blur(10px) saturate(200%)';
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.width = '30px';
-    cursor.style.height = '30px';
-    cursor.style.background = 'rgba(255,255,255,0.1)';
-    cursor.style.backdropFilter = 'blur(6px) saturate(180%)';
-  });
-});

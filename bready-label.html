@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BREADY LABEL</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREADY LABEL</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 text-gray-100">
 
-  <div class="cursor" id="cursor"></div>
-  <canvas id="music-visualizer"></canvas>
+<div class="cursor" id="cursor"></div>
+<canvas id="music-visualizer"></canvas>
 
-  <header class="p-6 flex justify-between items-center sticky top-0 bg-white dark:bg-gray-900 z-50 shadow">
-    <h1 class="text-2xl font-bold">BREADY LABEL</h1>
-    <nav class="space-x-4">
-      <a href="index.html" class="hover:underline">Home</a>
-      <a href="projects.html" class="hover:underline">Projects</a>
-      <a href="bready-label.html" class="hover:underline">BREADY LABEL</a>
-    </nav>
-    <button id="themeToggle" class="px-4 py-2 bg-sky-500 text-white rounded-lg">Toggle Theme</button>
-  </header>
+<header class="p-6 flex justify-between items-center sticky top-0 bg-black/50 backdrop-blur-md z-50 shadow">
+<h1 class="text-2xl font-bold text-white">BREADY LABEL</h1>
+<nav class="space-x-4">
+<a href="index.html" class="hover:underline">Home</a>
+<a href="projects.html" class="hover:underline">Projects</a>
+<a href="bready-label.html" class="hover:underline">BREADY LABEL</a>
+</nav>
+<button id="themeToggle" class="px-4 py-2 bg-sky-500 text-white rounded-lg hover:scale-105 transition">Toggle Theme</button>
+</header>
 
-  <section class="relative p-10">
-    <h2 class="text-3xl font-bold mb-6">🎵 BREADY LABEL</h2>
+<section class="relative p-10">
+<h2 class="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-purple-400 mb-6">🎵 BREADY LABEL</h2>
 
-    <!-- Featured Track -->
-    <div class="mb-8 p-6 bg-gradient-to-r from-sky-500 to-purple-500 text-white rounded-2xl shadow-lg">
-      <h3 class="text-2xl font-bold">🔥 Featured Track</h3>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/YOUR_TRACK_ID" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
+<div class="mb-8 card p-6 shadow-lg">
+<h3 class="text-2xl font-bold">🔥 Featured Track</h3>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/YOUR_TRACK_ID" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
 
-    <!-- Album Grid -->
-    <div class="grid md:grid-cols-3 gap-6 mb-8" id="album-grid"></div>
+<div class="grid md:grid-cols-3 gap-6 mb-8" id="album-grid"></div>
 
-    <!-- Updates / Blog Section -->
-    <section>
-      <h3 class="text-2xl font-bold mb-4">📰 Updates</h3>
-      <div id="updates" class="space-y-4"></div>
-    </section>
-  </section>
+<section>
+<h3 class="text-2xl font-bold mb-4">📰 Updates</h3>
+<div id="updates" class="space-y-4"></div>
+</section>
+</section>
 
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

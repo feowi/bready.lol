@@ -46,3 +46,14 @@ fetch('updates.json')
       });
     }
   });
+
+  // Contact form submission (demo)
+const contactForm = document.querySelector('form');
+if(contactForm){
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Thanks! Your message has been sent.');
+    contactForm.reset();
+  });
+}
+

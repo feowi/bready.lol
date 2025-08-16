@@ -3,12 +3,18 @@
 body { cursor: none; font-family: 'Inter', sans-serif; }
 
 .cursor {
-  width: 22px; height: 22px;
-  border: 2px solid #38bdf8; border-radius: 50%;
-  position: fixed; transform: translate(-50%, -50%);
-  pointer-events: none; transition: transform 0.12s ease, background 0.2s;
-  z-index: 9999; box-shadow: 0 0 12px rgba(56,189,248,0.7);
-  background: rgba(56,189,248,0.2);
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease, backdrop-filter 0.2s ease;
+  z-index: 9999;
+  backdrop-filter: blur(6px) saturate(180%);
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
 }
 
 .card {
@@ -36,4 +42,8 @@ body { cursor: none; font-family: 'Inter', sans-serif; }
   border-radius: 50%;
   position: absolute;
   animation: floatShapes 6s ease-in-out infinite;
+}
+
+body, button, input, a, textarea {
+  cursor: none !important; /* Forces native cursor to disappear */
 }

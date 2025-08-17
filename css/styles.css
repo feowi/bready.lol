@@ -1,71 +1,142 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ===== Reset ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== Theme vars ===== */
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --line: #000000;
+}
+.dark {
+  --bg: #0b0b0b;
+  --fg: #efefef;
+  --line: #efefef;
 }
 
-/* Body */
+/* ===== Page layout ===== */
+html, body { height: 100%; }
 body {
-  font-family: Arial, sans-serif;
-  background: white;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  transition: background .35s ease, color .35s ease;
 }
 
-/* Sidebar */
+/* ===== Right sidebar ===== */
 .sidebar {
   position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  border-left: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10px;
+  top: 0; right: 0; bottom: 0;
+  width: 200px;
+  border-left: 4px solid var(--line);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  padding: 10px 16px;
+  gap: 16px;
 }
-
-.sidebar .menu-btn {
-  background: none;
-  border: none;
+.menu-btn {
+  justify-self: end;
   font-size: 24px;
-  margin-bottom: 20px;
+  border: none;
+  background: transparent;
+  color: var(--fg);
+  line-height: 1;
   cursor: pointer;
 }
-
-.sidebar ul {
+.nav {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-self: end;
+  display: grid;
+  gap: 18px;
+  padding-right: 6px; /* match your sketch spacing */
 }
-
-.sidebar a {
+.nav a {
   text-decoration: none;
-  font-size: 24px;
-  color: black;
-  font-weight: bold;
+  color: var(--fg);
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 1px;
+  cursor: none; /* keep custom cursor over links */
 }
+.nav a:hover { opacity: .7; }
 
-/* Main content */
-main {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ===== Centered logo ===== */
+.center {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding-right: 200px; /* make room for sidebar */
+  padding-bottom: 48px; /* make room for bottom bar */
 }
-
 .logo {
-  font-size: 48px;
-  font-weight: bold;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 800;
+  letter-spacing: 4px;
 }
 
-/* Footer */
-footer {
-  border-top: 2px solid black;
+/* ===== Bottom bar ===== */
+.bottom-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  border-top: 4px solid var(--line);
+  background: transparent;
   text-align: center;
-  padding: 5px;
-  font-weight: bold;
+  padding: 6px 0;
+  font-weight: 700;
+}
+
+/* ===== Toggle (sun/moon) ===== */
+.theme { justify-self: end; }
+.switch {
+  --w: 60px; --h: 28px;
+  position: relative;
+  display: inline-block;
+  width: var(--w); height: var(--h);
+  background: #d1d5db; /* light gray */
+  border-radius: var(--h);
+  transition: background .25s ease;
+  cursor: none;
+}
+.dark .switch { background: #374151; }
+.switch .thumb {
+  position: absolute; top: 3px; left: 3px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #fff;
+  transition: transform .25s ease;
+}
+#themeToggle:checked + .switch .thumb { transform: translateX(32px); }
+.switch .icon {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  font-size: 14px; pointer-events: none; user-select: none;
+}
+.switch .sun { left: 8px; }
+.switch .moon { right: 8px; }
+
+/* ===== Liquid-glass cursor ===== */
+.no-native-cursor, .no-native-cursor a, .no-native-cursor button,
+.no-native-cursor input, .no-native-cursor textarea, .no-native-cursor label {
+  cursor: none !important; /* hide system cursor everywhere */
+}
+#cursor {
+  position: fixed; left: 0; top: 0;
+  width: 28px; height: 28px; border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; z-index: 9999;
+  backdrop-filter: blur(8px) saturate(160%);
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transition: width .18s ease, height .18s ease, background .18s ease, backdrop-filter .18s ease;
+}
+#cursor.hover {
+  width: 56px; height: 56px;
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(12px) saturate(200%);
+}
+
+/* Make it friendly on small screens (sidebar collapses width a bit) */
+@media (max-width: 700px) {
+  .sidebar { width: 140px; }
+  .center { padding-right: 140px; }
+  .nav a { font-size: 22px; }
 }

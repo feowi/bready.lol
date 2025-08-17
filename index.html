@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BREADY</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <!-- Sidebar -->
-  <nav class="sidebar">
-    <button class="menu-btn">☰</button>
-    <ul>
+<body class="no-native-cursor">
+  <!-- Custom cursor (liquid glass) -->
+  <div id="cursor"></div>
+
+  <!-- Right Sidebar -->
+  <aside class="sidebar">
+    <button class="menu-btn" aria-label="menu">☰</button>
+
+    <ul class="nav">
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#bready">BREADY</a></li>
       <li><a href="#label">Label</a></li>
       <li><a href="#about">About</a></li>
     </ul>
-  </nav>
 
-  <!-- Main content -->
-  <main>
+    <!-- Sun/Moon toggle -->
+    <div class="theme">
+      <input id="themeToggle" type="checkbox" />
+      <label for="themeToggle" class="switch">
+        <span class="icon sun">☀️</span>
+        <span class="icon moon">🌙</span>
+        <span class="thumb"></span>
+      </label>
+    </div>
+  </aside>
+
+  <!-- Center content -->
+  <main class="center">
     <h1 class="logo">BREADY</h1>
   </main>
 
-  <!-- Footer -->
-  <footer>
+  <!-- Bottom “header” bar -->
+  <footer class="bottom-bar">
     <span>header</span>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

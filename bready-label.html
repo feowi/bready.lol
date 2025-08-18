@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BREADY — Label</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="h-full no-native-cursor">
+  <!-- Background layers -->
+  <div class="bg-mesh"></div>
+  <canvas id="particles"></canvas>
+  <!-- Custom cursor -->
+  <div id="cursor"></div>
+
+  <!-- Right Sidebar -->
+  <aside class="sidebar">
+    <button class="menu-btn" aria-label="menu">☰</button>
+    <ul class="nav">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="bready-label.html">BREADY Label</a></li>
+      <li><a href="index.html#updates">Updates</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </aside>
+
+  <main class="page">
+    <header class="page-header reveal">
+      <h1>🎵 BREADY LABEL</h1>
+      <p>Featured track and latest releases.</p>
+    </header>
+
+    <!-- Featured Track Card -->
+    <section class="section reveal">
+      <div class="glass featured">
+        <img src="assets/images/cover.png" alt="Featured cover">
+        <div class="meta">
+          <h3>🔥 Featured Track</h3>
+          <p>Listen to the latest release.</p>
+          <div class="player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC"
+              width="100%" height="152" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Album Grid -->
+    <section class="section reveal">
+      <h2 class="section-title">Albums</h2>
+      <div class="album-grid">
+        <div class="album">
+          <img src="assets/images/album1.png" alt="Album 1">
+          <div class="overlay"><span>Album 1</span></div>
+        </div>
+        <div class="album">
+          <img src="assets/images/album2.png" alt="Album 2">
+          <div class="overlay"><span>Album 2</span></div>
+        </div>
+        <div class="album">
+          <img src="assets/images/album3.png" alt="Album 3">
+          <div class="overlay"><span>Album 3</span></div>
+        </div>
+        <div class="album">
+          <img src="assets/images/album4.png" alt="Album 4">
+          <div class="overlay"><span>Album 4</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional Videos -->
+    <section class="section reveal">
+      <h2 class="section-title">Videos</h2>
+      <div class="videos glass">
+        <div class="video-embed">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottom-bar">header</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

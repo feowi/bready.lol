@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Album One",
+    "image": "assets/images/album1.png",
+    "link": "#"
+  },
+  {
+    "title": "Album Two",
+    "image": "assets/images/album2.png",
+    "link": "#"
+  },
+  {
+    "title": "Album Three",
+    "image": "assets/images/album3.png",
+    "link": "#"
+  },
+  {
+    "title": "Album Four",
+    "image": "assets/images/album4.png",
+    "link": "#"
+  }
+]

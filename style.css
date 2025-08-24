@@ -80,6 +80,8 @@ body{
   font-size: 24px; /* slightly smaller to fit */
   letter-spacing: 0.5px; /* reduce spacing */
   white-space: nowrap; /* prevents line break */
+  display: inline-block;
+  white-space: nowrap;
 }
 .nav a:hover{opacity:.75}
 

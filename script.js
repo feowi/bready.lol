@@ -45,7 +45,8 @@ function draw(){
     if(p.y < 0) p.y = h; if(p.y > h) p.y = 0;
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-    ctx.fillStyle = 'rgba(255,255,255,'+p.o+')';
+    ctx.fillStyle = "#000";   // black background
+    ctx.fillRect(0, 0, w, h); // cover canvas each frame
     ctx.fill();
   }
   requestAnimationFrame(draw);

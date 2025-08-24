@@ -738,59 +738,26 @@ document.querySelectorAll('a, button, .menu-btn').forEach(el=>{
   el.addEventListener('mouseenter', ()=> cursor.classList.add('hover'));
   el.addEventListener('mouseleave', ()=> cursor.classList.remove('hover'));
 });
-ChatGPT zei:
 
-Ahhh I see the problem now 👀 — it’s not the JavaScript itself, it’s the canvas background.
+function initParticles(){
+  const count = Math.round((innerWidth * innerHeight) / 22000); // density
+  const redShades = [
+    'rgba(139,0,0,',   // dark red
+    'rgba(178,34,34,', // firebrick
+    'rgba(220,20,60,', // crimson
+    'rgba(255,69,58,'  // tomato
+  ];
 
-Right now your <canvas id="particles"> is transparent by default, so the page shows the browser’s default white background. That’s why your CSS body { background: #000; } doesn’t appear — the canvas is covering everything.
-
-👉 Quick fix: just make the canvas background dark in your CSS or directly in JS.
-
-Option 1: CSS fix
-
-Add this to your CSS:
-
-body {
-  background: #000; /* black background */
-  color: white;     /* make sure text is visible */
+  particles = Array.from({length: count}, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 1.8 * dpr + 0.6,
+    a: Math.random() * Math.PI * 2,
+    v: 0.2 + Math.random() * 0.5,
+    o: 0.06 + Math.random() * 0.14,
+    color: redShades[Math.floor(Math.random() * redShades.length)] // assign once
+  }));
 }
-
-#particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000; /* <-- fixes the white issue */
-  z-index: -1;      /* keep particles behind everything */
-}
-
-Option 2: JS fix
-
-If you prefer it inside your JS, set the canvas background like this inside draw() before drawing particles:
-
-ctx.fillStyle = "#000";   // black background
-ctx.fillRect(0, 0, w, h); // cover canvas each frame
-
-
-That way every frame redraws with a black background instead of clearing to transparent white.
-
-⚡ Since you already want dark/red theme, I’d go with Option 1 (CSS) so your canvas stays behind with a black base.
-
-Do you want me to also make the particles glow faintly red instead of plain white? That would fit your red-hover vibe really nicely.
-
-Je zei:
-Okay so that fixed it but i dont see the glowing red particles in the background anymore..
-ChatGPT zei:
-
-Ah, yep 😅 right now your particles are hard-coded in JS as white:
-
-ctx.fillStyle = 'rgba(255,255,255,'+p.o+')';
-
-
-Since your background is now black, the white still shows, but it doesn’t glow red. If you want subtle glowing red particles, you can change it to a red tint and add a slight blur effect.
-
-Here’s an updated JS snippet for your particle drawing:
 
 function draw(){
   ctx.clearRect(0,0,w,h);
@@ -806,21 +773,10 @@ function draw(){
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
 
-    // subtle gradient red tones based on mesh colors
-    const redShades = [
-      'rgba(139,0,0,'+p.o+')',   // dark red
-      'rgba(178,34,34,'+p.o+')', // firebrick
-      'rgba(220,20,60,'+p.o+')', // crimson
-      'rgba(255,69,58,'+p.o+')'  // tomato
-    ];
-    const color = redShades[Math.floor(Math.random() * redShades.length)];
-
-    ctx.fillStyle = color;
-    ctx.shadowColor = color;
-    ctx.shadowBlur = 6; // subtle glow
+    ctx.fillStyle = p.color + p.o + ')';
+    ctx.shadowColor = p.color + '0.3)';
+    ctx.shadowBlur = 6;
     ctx.fill();
-
-    // reset shadow for next particle
     ctx.shadowBlur = 0;
   }
 

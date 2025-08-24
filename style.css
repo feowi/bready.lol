@@ -1,0 +1,157 @@
+/* ===== Reset & base ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:#0e0e12;
+  overflow-x:hidden;
+}
+
+/* ===== Background: animated gradient mesh ===== */
+.bg-mesh{
+  position:fixed; inset:0; z-index:-2;
+  background:
+    radial-gradient(40% 35% at 20% 20%, rgba(255,0,153,.25), transparent 60%),
+    radial-gradient(35% 40% at 80% 30%, rgba(0,153,255,.25), transparent 60%),
+    radial-gradient(45% 45% at 50% 80%, rgba(0,255,153,.25), transparent 60%),
+    radial-gradient(30% 35% at 20% 80%, rgba(255,204,0,.25), transparent 60%);
+  animation: meshMove 18s ease-in-out infinite alternate;
+  filter: saturate(140%) blur(20px);
+}
+@keyframes meshMove{
+  0%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(-2%,1%,0) scale(1.02)}
+  100%{transform:translate3d(2%,-1%,0) scale(1.03)}
+}
+
+/* ===== Background: subtle floating particles (canvas) ===== */
+#particles{
+  position:fixed; inset:0; z-index:-1;
+}
+
+/* ===== Custom Cursor ===== */
+.no-native-cursor, .no-native-cursor a, .no-native-cursor button,
+.no-native-cursor input, .no-native-cursor textarea, .no-native-cursor label{
+  cursor:none !important;
+}
+#cursor{
+  position:fixed; left:0; top:0;
+  width:28px; height:28px; border-radius:50%;
+  transform:translate(-50%, -50%);
+  pointer-events:none; z-index:9999;
+  backdrop-filter: blur(8px) saturate(160%);
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transition: width .18s ease, height .18s ease, background .18s ease, backdrop-filter .18s ease;
+}
+#cursor.hover{ width:56px; height:56px; background:rgba(255,255,255,0.22); backdrop-filter: blur(12px) saturate(200%); }
+
+/* ===== Right Sidebar (mockup style) ===== */
+.sidebar{
+  position:fixed; right:0; top:0; bottom:0;
+  width:220px;
+  border-left:4px solid #0e0e12;
+  display:grid; grid-template-rows:auto 1fr auto;
+  gap:12px; padding:18px 18px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(6px);
+}
+.menu-btn{justify-self:end; background:transparent; border:0; font-size:20px; line-height:1; cursor:none}
+.nav{list-style:none; display:flex; flex-direction:column; gap:18px; align-items:flex-end; padding-right:4px}
+.nav a{
+  text-decoration:none; color:#0e0e12; font-weight:800; font-size:28px; letter-spacing:1px;
+}
+.nav a:hover{opacity:.75}
+
+/* ===== Centered hero ===== */
+.center{
+  min-height:100vh; display:grid; place-items:center; padding-right:220px; padding-bottom:48px;
+}
+.logo{font-size: clamp(44px, 8vw, 96px); font-weight:900; letter-spacing:6px}
+.sub{margin-top:12px; color:#1f2937}
+
+/* ===== Sections & glass cards ===== */
+.section{padding:72px 24px; padding-right:240px}
+.container{max-width:1100px; margin:0 auto}
+.glass{
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  backdrop-filter: blur(16px) saturate(150%);
+  padding: 28px;
+}
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.card{
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.30);
+  border-radius: 16px;
+  padding: 18px;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s;
+}
+.card:hover{transform: translateY(-6px) scale(1.02); box-shadow: 0 24px 40px rgba(0,0,0,0.18)}
+.card .thumb{
+  height:140px; border-radius:12px; margin-bottom:12px;
+  background: linear-gradient(120deg, rgba(99,102,241,.25), rgba(236,72,153,.25));
+}
+
+/* ===== Updates ===== */
+.updates{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+.updates article{
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.30);
+  border-radius: 12px; padding:14px
+}
+.updates h4{margin-bottom:6px}
+
+/* ===== Label page ===== */
+.page{padding-right:240px; padding-bottom:60px}
+.page-header{padding:96px 24px 12px 24px}
+.page-header h1{font-size: clamp(36px, 6vw, 64px); font-weight:900; letter-spacing:2px}
+.featured{
+  display:grid; grid-template-columns: 260px 1fr; gap:20px; align-items:center;
+}
+.featured img{width:100%; border-radius:16px; box-shadow: 0 20px 40px rgba(0,0,0,.15)}
+.featured .meta h3{font-size:28px; margin-bottom:8px}
+.featured .player{margin-top:10px}
+
+.section-title{margin: 12px 0 16px 0; font-size:24px; font-weight:800}
+.album-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.album{
+  position:relative; overflow:hidden; border-radius:16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  transform: translateZ(0);
+}
+.album img{display:block; width:100%; height:auto; transition: transform .6s cubic-bezier(.2,.8,.2,1);}
+.album .overlay{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background: rgba(0,0,0,0.45); color:#fff; font-weight:800; letter-spacing:1px;
+  opacity:0; transition: opacity .35s ease;
+}
+.album:hover img{transform: scale(1.08)}
+.album:hover .overlay{opacity:1}
+
+/* ===== Bottom bar ===== */
+.bottom-bar{
+  position:fixed; left:0; right:0; bottom:0;
+  border-top:4px solid #0e0e12; text-align:center; padding:8px 0; font-weight:700;
+  background: rgba(255,255,255,0.35); backdrop-filter: blur(6px);
+}
+
+/* ===== Reveal on scroll ===== */
+.reveal{opacity:0; transform: translateY(24px);}
+.reveal.in{opacity:1; transform:none; transition: opacity .7s ease, transform .7s ease}
+
+/* ===== Responsive ===== */
+@media (max-width: 1000px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .updates{grid-template-columns:repeat(2,1fr)}
+  .album-grid{grid-template-columns:repeat(2,1fr)}
+  .featured{grid-template-columns:1fr}
+}
+@media (max-width: 720px){
+  .sidebar{width:140px}
+  .center{padding-right:140px}
+  .section{padding-right:160px}
+}

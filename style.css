@@ -64,9 +64,22 @@ body{
   backdrop-filter: blur(6px);
 }
 .menu-btn{justify-self:end; background:transparent; border:0; font-size:20px; line-height:1; cursor:none; color:#fff;}
-.nav{list-style:none; display:flex; flex-direction:column; gap:18px; align-items:flex-end; padding-right:4px}
-.nav a{
-  text-decoration:none; color:#fff; font-weight:800; font-size:28px; letter-spacing:1px;
+.nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start; /* change from flex-end */
+  padding-right: 4px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff; /* your white text */
+  font-weight: 800;
+  font-size: 24px; /* slightly smaller to fit */
+  letter-spacing: 0.5px; /* reduce spacing */
+  white-space: nowrap; /* prevents line break */
 }
 .nav a:hover{opacity:.75}
 

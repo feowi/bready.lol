@@ -9,13 +9,14 @@ body{
 }
 
 /* ===== Background: animated gradient mesh ===== */
-.bg-mesh{
-  position:fixed; inset:0; z-index:-2;
+.bg-mesh {
+  position: fixed; inset: 0; z-index: -2;
   background:
-    radial-gradient(40% 35% at 20% 20%, rgba(139,0,0,.4), transparent 60%),   /* dark red */
-    radial-gradient(35% 40% at 80% 30%, rgba(178,34,34,.35), transparent 60%), /* firebrick */
-    radial-gradient(45% 45% at 50% 80%, rgba(220,20,60,.3), transparent 60%), /* crimson */
-    radial-gradient(30% 35% at 20% 80%, rgba(255,69,58,.25), transparent 60%); /* tomato red */
+    #000, /* solid black base */
+    radial-gradient(40% 35% at 20% 20%, rgba(139,0,0,.4), transparent 60%),
+    radial-gradient(35% 40% at 80% 30%, rgba(178,34,34,.35), transparent 60%),
+    radial-gradient(45% 45% at 50% 80%, rgba(220,20,60,.3), transparent 60%),
+    radial-gradient(30% 35% at 20% 80%, rgba(255,69,58,.25), transparent 60%);
   animation: meshMove 18s ease-in-out infinite alternate;
   filter: saturate(140%) blur(20px);
 }

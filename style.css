@@ -121,9 +121,11 @@ body{
 
 .thumb {
   width: 100%;
-  aspect-ratio: 16 / 9; /* or 1 / 1 for perfect square */
-  background-size: cover;
+  aspect-ratio: 1 / 1; /* square card, you can also try 16/9 */
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000; /* or a color matching your theme */
   border-radius: 8px;
 }
 

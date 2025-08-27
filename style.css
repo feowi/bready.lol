@@ -121,9 +121,10 @@ body{
 
 .thumb {
   width: 100%;
-  height: 150px; /* adjust height */
+  height: 150px; /* adjust to whatever height looks good */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   border-radius: 8px;
 }
 

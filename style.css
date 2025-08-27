@@ -121,10 +121,9 @@ body{
 
 .thumb {
   width: 100%;
-  height: 150px; /* adjust to whatever height looks good */
+  aspect-ratio: 16 / 9; /* or 1 / 1 for perfect square */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   border-radius: 8px;
 }
 
